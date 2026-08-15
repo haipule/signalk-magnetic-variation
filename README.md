@@ -49,6 +49,10 @@ npm test
 npm pack --dry-run
 ```
 
+Pushes and pull requests are tested with Node.js 20, 22, and 24. Releases are
+published from GitHub Actions with npm Trusted Publishing (OIDC); no long-lived
+npm write token is stored in the repository.
+
 The implementation uses `magvar` 2.0.1, an MIT-licensed, zero-dependency
 WMM2025 implementation. The plugin calls its date-aware API explicitly rather
 than the convenience function whose date is captured when the module loads.
