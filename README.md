@@ -26,7 +26,8 @@ empty or placeholder variation.
 
 - Requires a valid `navigation.position` update.
 - Uses altitude when present; Signal K metres are converted to kilometres.
-- Recalculates after a configurable time or distance travelled.
+- Republishes at a configurable interval so Signal K continues to regard the
+  source as fresh, and recalculates from the latest position and date.
 - Stops updating when position data becomes stale.
 - Rejects dates outside the WMM2025 validity interval, 2025 through 2029.
 - Publishes radians while showing degrees east/west in plugin status.
@@ -35,7 +36,7 @@ empty or placeholder variation.
 
 | Option | Default | Purpose |
 | --- | ---: | --- |
-| Maximum time between calculations | 3600 s | Accounts for model time changes |
+| Publication interval | 10 s | Keeps the preferred source fresh |
 | Minimum distance | 5 NM | Accounts for vessel movement |
 | Maximum position age | 300 s | Prevents calculation from stale position |
 

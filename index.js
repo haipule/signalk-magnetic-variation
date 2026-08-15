@@ -16,9 +16,10 @@ module.exports = function (app) {
       properties: {
         updateIntervalSeconds: {
           type: 'number',
-          title: 'Maximum time between calculations (seconds)',
-          default: 3600,
-          minimum: 60
+          title: 'Publication interval (seconds)',
+          description: 'Keeps this source fresh for Signal K priority fallback handling',
+          default: 10,
+          minimum: 5
         },
         minimumDistanceNm: {
           type: 'number',
@@ -50,7 +51,7 @@ module.exports = function (app) {
   function start (configuration = {}) {
     stop()
     options = {
-      updateIntervalSeconds: configuration.updateIntervalSeconds || 3600,
+      updateIntervalSeconds: configuration.updateIntervalSeconds || 10,
       minimumDistanceNm: configuration.minimumDistanceNm || 5,
       positionMaxAgeSeconds: configuration.positionMaxAgeSeconds || 300
     }

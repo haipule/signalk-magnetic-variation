@@ -26,7 +26,7 @@ test('publishes variation in radians with its own source', () => {
   }
   const plugin = createPlugin(app)
 
-  plugin.start({ updateIntervalSeconds: 3600, minimumDistanceNm: 5 })
+  plugin.start({ updateIntervalSeconds: 10, minimumDistanceNm: 5 })
   onPosition({ latitude: 11.3214, longitude: -60.5542 })
   plugin.stop()
 
