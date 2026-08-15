@@ -1,6 +1,7 @@
 name: Publish Package
 
 on:
+  workflow_dispatch:
   release:
     types: [published]
 
@@ -23,7 +24,7 @@ jobs:
       - run: npm test
       - name: Publish when this version is not already on npm
         run: |
-          if npm view "$npm_package_name@$npm_package_version" version >/dev/null 2>&1; then
+          if node -e 'const p = require("./package.json"); fetch(`https://registry.npmjs.org/${p.name}/${p.version}`).then(response => process.exit(response.ok ? 0 : 1))'; then
             echo "$npm_package_name@$npm_package_version is already published"
           else
             npm publish --access public
