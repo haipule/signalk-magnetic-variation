@@ -67,6 +67,9 @@ Do not treat a GPS-provided numeric zero as valid merely because it is present.
 A genuine near-zero variation is possible in some regions, so source identity
 and policy matter more than a numeric zero check.
 
+The first vessel installation is recorded in
+[`docs/live-test-2026-08-15.md`](docs/live-test-2026-08-15.md).
+
 ## License
 
 Apache License 2.0. The `magvar` dependency is MIT licensed.

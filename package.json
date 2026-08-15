@@ -6,6 +6,7 @@
   "type": "commonjs",
   "files": [
     "CHANGELOG.md",
+    "docs/",
     "LICENSE",
     "README.md",
     "index.js",
