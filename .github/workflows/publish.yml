@@ -21,4 +21,10 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm run check
       - run: npm test
-      - run: npm publish --access public
+      - name: Publish when this version is not already on npm
+        run: |
+          if npm view "$npm_package_name@$npm_package_version" version >/dev/null 2>&1; then
+            echo "$npm_package_name@$npm_package_version is already published"
+          else
+            npm publish --access public
+          fi
