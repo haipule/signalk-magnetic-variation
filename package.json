@@ -1,0 +1,38 @@
+{
+  "name": "signalk-magnetic-variation",
+  "version": "0.1.0",
+  "description": "Signal K server plugin that publishes WMM2025 magnetic variation from vessel position",
+  "main": "index.js",
+  "type": "commonjs",
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "index.js",
+    "lib/"
+  ],
+  "scripts": {
+    "check": "node --check index.js && node --check lib/*.js && node --check test/*.js",
+    "test": "node --test",
+    "prepublishOnly": "npm run check && npm test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "magvar": "2.0.1"
+  },
+  "keywords": [
+    "signalk-node-server-plugin",
+    "signalk",
+    "magnetic-variation",
+    "magnetic-declination",
+    "wmm",
+    "wmm2025",
+    "marine-navigation"
+  ],
+  "license": "Apache-2.0",
+  "signalk": {
+    "displayName": "WMM2025 Magnetic Variation"
+  }
+}
