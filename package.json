@@ -25,6 +25,7 @@
   },
   "keywords": [
     "signalk-node-server-plugin",
+    "signalk-category-utility",
     "signalk",
     "magnetic-variation",
     "magnetic-declination",
@@ -32,7 +33,17 @@
     "wmm2025",
     "marine-navigation"
   ],
+  "author": "haipule",
   "license": "Apache-2.0",
+  "homepage": "https://github.com/haipule/signalk-magnetic-variation#readme",
+  "bugs": {
+    "url": "https://github.com/haipule/signalk-magnetic-variation/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haipule/signalk-magnetic-variation.git"
+  },
+  "signalk-plugin-enabled-by-default": false,
   "signalk": {
     "displayName": "WMM2025 Magnetic Variation"
   }
