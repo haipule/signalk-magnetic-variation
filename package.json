@@ -13,7 +13,7 @@
     "lib/"
   ],
   "scripts": {
-    "check": "node --check index.js && node --check lib/*.js && node --check test/*.js",
+    "check": "node --check index.js && node --check lib/calculator.js && node --check test/calculator.test.js && node --check test/plugin.test.js",
     "test": "node --test",
     "prepublishOnly": "npm run check && npm test"
   },
