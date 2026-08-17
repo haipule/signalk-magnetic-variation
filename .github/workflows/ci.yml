@@ -1,4 +1,4 @@
-name: CI
+name: SignalK Plugin CI
 
 on:
   push:
@@ -10,18 +10,17 @@ permissions:
 
 jobs:
   test:
+    uses: SignalK/signalk-server/.github/workflows/plugin-ci.yml@master
+    with:
+      test-command: npm run check && npm test
+
+  audit:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [20, 22, 24]
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: npm run check
-      - run: npm test
       - run: npm audit --omit=dev
-      - run: npm pack --dry-run
